@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh Bluetooth dengan Interaksi Pengguna</title>
+</head>
+<body>
+    <button id="cariBluetooth">Cari Perangkat Bluetooth</button>
+
+    <script>
+        const cariBluetoothButton = document.getElementById('cariBluetooth');
+
+        cariBluetoothButton.addEventListener('click', async function() {
+            try {
+                const device = await navigator.bluetooth.requestDevice({
+                    filters: [{ services: ['000018f0-0000-1000-8000-00805f9b34fb'] }]
+                });
+                console.log('Perangkat ditemukan:', device);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
