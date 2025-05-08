@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 # Data antrian sederhana (bisa diganti dengan database)
+# ini contoh yang sederhana
 nomor_antrian_saat_ini = 0
 
 @app.route('/')
