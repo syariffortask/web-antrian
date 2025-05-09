@@ -8,10 +8,6 @@ nomor_antrian_saat_ini = 0
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-@app.route('/cetak')
-def halaman_cetak():
     return render_template('antrian.html')
 
 @app.route('/get_nomor_antrian')
